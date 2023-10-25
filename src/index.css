@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Css for Vibrate animation on trendCart logo */
+
+@keyframes vibrate {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes slider {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+
+    transform: translateX(-100%);
+  }
+}
+
+/* Css for www.trendcart.com animation */
+
+.draw-text tspan {
+  stroke-dasharray: 50, 10;
+  stroke-dashoffset: 100;
+  animation: drawText 10s infinite alternate;
+}
+
+@keyframes drawText {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* preloader animation */
+.animate-preloader {
+  animation: preloader 3s linear normal;
+  animation-iteration-count: 1;
+}
+
+@keyframes preloader {
+
+  0% {
+    height: 0;
+    width: 0;
+    border-radius: 100%;
+  }
+
+  30% {
+    height: 100vh;
+    width: 100vw;
+    border-radius: 0;
+  }
+
+  100% {
+
+    width: 0vw;
+    height: 0vh;
+
+  }
+}
+
+@layer base {
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .animate-vibrate {
+    animation: vibrate 0.3s infinite;
+  }
+
+  .animate-slider {
+    animation: slider 15s infinite linear;
+  }
+}
