@@ -18,7 +18,7 @@ export default function AdminProductForm() {
     useEffect(() => {
         reset()
     }, [isSubmitSuccessful, reset])
-    
+
     useEffect(() => {
         if (params.id) {
             dispatch(fetchProductByIdAsync(params.id))
@@ -47,7 +47,7 @@ export default function AdminProductForm() {
             dispatch(clearSelectedProduct())
 
         }
-    }, [dispatch,selectedProduct, params.id, setValue])
+    }, [dispatch, selectedProduct, params.id, setValue])
 
 
     return (
@@ -64,13 +64,12 @@ export default function AdminProductForm() {
             if (params.id) {
                 newProduct.id = params.id
                 newProduct.rating = rating || 0
-                const selectedProductName = selectedProduct.title
-                dispatch(updateProductAsync({update:newProduct,selectedProductName,toast,type:'UPDATE'}))
+                dispatch(updateProductAsync({ update: newProduct, toast, type: 'UPDATE' }))
 
             }
             else {
 
-                dispatch(createNewProductAsync({update:newProduct,toast}))
+                dispatch(createNewProductAsync({ product: newProduct, toast }))
             }
 
         }

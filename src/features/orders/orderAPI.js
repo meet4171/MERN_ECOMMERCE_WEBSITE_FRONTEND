@@ -2,7 +2,7 @@
 
 export function addOrder(orderDetail) {
   return new Promise(async (resolve) => {
-    const response = await fetch('api/orders/', {
+    const response = await fetch('/api/orders/', {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -24,7 +24,7 @@ export function fetchAllOrders(pagination) {
       queryString += `${key}=${pagination[key]}&`
     }
 
-    const response = await fetch('api/admin/orders?' + queryString, {
+    const response = await fetch('/api/admin/orders?' + queryString, {
       method: 'GET',
       credentials: "include"
     });

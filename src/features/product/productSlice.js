@@ -21,14 +21,14 @@ export const createNewProductAsync = createAsyncThunk(
 );
 export const updateProductAsync = createAsyncThunk(
   'product/updateProduct',
-  async ({ update, selectedProductName = '', toast, type }) => {
+  async ({ update, toast, type }) => {
     const response = await updateProduct(update);
       if (type === 'DELETE') {
 
-        toast.success(`${selectedProductName} Deleted Successfully`, { icon: '🗑️' });
+        toast.success(`Deleted Successfully`, { icon: '🗑️' });
       }
       else {
-        toast.success(`${selectedProductName} updated Successfully`);
+        toast.success(`updated Successfully`);
 
       }
     return response.data;
