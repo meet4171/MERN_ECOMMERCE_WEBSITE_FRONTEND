@@ -11,9 +11,9 @@ export const addToCartAsync = createAsyncThunk(
   async ({ item, toast }) => {
     const response = await addToCart(item);
     toast.success('Added Successfully', {
-
-      icon: '🛒'
+    icon: '🛒'
     });
+    console.log(response)
     return response.data;
   }
 );
@@ -60,9 +60,12 @@ export const cartSlice = createSlice({
     builder
       .addCase(addToCartAsync.pending, (state) => {
         state.status = 'loading';
+        console.log("pending is true")
       })
       .addCase(addToCartAsync.fulfilled, (state, action) => {
         state.status = 'idle';
+        const data = action.payload
+        console.log("fulfilled is ture : ",data)
         state.items.push(action.payload);
       })
       .addCase(fetchCartItemsAsync.pending, (state) => {
