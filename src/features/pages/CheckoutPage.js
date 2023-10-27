@@ -82,7 +82,7 @@ export default function CheckoutPage() {
     function handleConfirmDeleteShippingAddress() {
         const newAddresses = userInfo.addresses.filter((_, i) => i !== selectedDeleteShippingAddress);
         const updatedUser = { ...userInfo, addresses: newAddresses };
-        dispatch(updateUserAsync({ updatedUser, toast, type: "REMOVE" }));
+        dispatch(updateUserAsync({ update:updatedUser, toast, type: "REMOVE" }));
         setIsOpen(false)
         setSelectedDeleteShippingAddress(-1)
 
@@ -97,7 +97,7 @@ export default function CheckoutPage() {
     }
     function handleAddAddress(data) {
         const updatedUser = { ...userInfo, addresses: [...userInfo.addresses, data] }
-        dispatch(updateUserAsync({updatedUser, toast, type: "ADD"}))
+        dispatch(updateUserAsync({update:updatedUser, toast, type: "ADD"}))
     }
     function handleRemoveAddress(index) {
 

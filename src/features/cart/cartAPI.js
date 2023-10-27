@@ -1,7 +1,7 @@
 // import { fetchWithRetries } from "../comman/retryApiCall";
 export function addToCart(item) {
   return new Promise(async (resolve) => {
-    const response = fetch('/api/cart', {
+    const response = await fetch('/api/cart', {
       method: "POST",
       body: JSON.stringify(item),
       credentials: "include",

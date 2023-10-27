@@ -39,7 +39,6 @@ function Login() {
             return <Navigate to="/admin" />;
         }
         else if (loggingIn === "idle" && userToken.role === 'user') {
-            console.log("true in login")
             return <Navigate to="/" />;
         }
     }

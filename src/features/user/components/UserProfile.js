@@ -48,7 +48,7 @@ function UserProfile() {
 
         const newAddresses = userInfo.addresses.filter((_, i) => i !== selectedDeleteItem);
         const updatedUser = { ...userInfo, addresses: newAddresses };
-        dispatch(updateUserAsync({ updatedUser, toast, type: "REMOVE" }));
+        dispatch(updateUserAsync({ update:updatedUser, toast, type: "REMOVE" }));
 
         setIsOpen(false)
 
@@ -65,7 +65,7 @@ function UserProfile() {
         const updatedUser = {
             ...userInfo, addresses: [...userInfo.addresses, data]
         }
-        dispatch(updateUserAsync({ updatedUser, toast, type: "ADD" }))
+        dispatch(updateUserAsync({ update:updatedUser, toast, type: "ADD" }))
     }
     function handleEditForm(index) {
         setEditIndex(index)
@@ -81,7 +81,7 @@ function UserProfile() {
         updatedAddresses.splice(editIndex, 1, editedAddress);
 
         const updatedUser = { ...userInfo, addresses: updatedAddresses };
-        dispatch(updateUserAsync({updatedUser,toast,type:"EDITED"}));
+        dispatch(updateUserAsync({update:updatedUser,toast,type:"EDITED"}));
 
         setEditIndex(null);
         setModalData({ ...modalData, isOpen: false });
