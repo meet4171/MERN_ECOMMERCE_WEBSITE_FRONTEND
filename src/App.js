@@ -35,7 +35,7 @@ import ResetPassword from './features/auth/components/ResetPassword';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: (
       <ProtectedRoute>
         <HomePage></HomePage>
