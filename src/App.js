@@ -33,139 +33,142 @@ import AdminOrdersPage from './features/pages/AdminOrdersPage';
 import PaymentError from './features/pages/PaymentErrorPage';
 import ResetPassword from './features/auth/components/ResetPassword';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <ProtectedRoute>
-        <HomePage></HomePage>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/login",
-    element: (<LoginPage></LoginPage>),
-  },
-  {
-    path: "/signup",
-    element: (<SignupPage></SignupPage>),
-  },
-  {
-    path: "/cart",
-    element: (
-      <ProtectedRoute>
-        <CartPage></CartPage>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/checkout",
-    element: (
-      <ProtectedRoute>
-        <CheckoutPage></CheckoutPage>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/product-detail/:id",
+const router = createBrowserRouter({
+  basename: '/',
+  routes: [
+    {
+      path: "/",
+      element: (
+        <ProtectedRoute>
+          <HomePage></HomePage>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/login",
+      element: (<LoginPage></LoginPage>),
+    },
+    {
+      path: "/signup",
+      element: (<SignupPage></SignupPage>),
+    },
+    {
+      path: "/cart",
+      element: (
+        <ProtectedRoute>
+          <CartPage></CartPage>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/checkout",
+      element: (
+        <ProtectedRoute>
+          <CheckoutPage></CheckoutPage>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/product-detail/:id",
 
-    element: (
-      <ProtectedRoute>
-        <ProductDetailPage></ProductDetailPage>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/order-success/:id",
-    element: (
-      <ProtectedRoute>
-        <OrderSuccessPage></OrderSuccessPage>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/user-orders",
-    element: (
-      <ProtectedRoute>
-        <UserOrderPage></UserOrderPage>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/user-profile",
-    element: (
-      <ProtectedRoute>
-        <UserProfilePage></UserProfilePage>
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/order-cancalled",
-    element: (
-      <ProtectedRoute>
-        <PaymentError></PaymentError>
-      </ProtectedRoute>
+      element: (
+        <ProtectedRoute>
+          <ProductDetailPage></ProductDetailPage>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/order-success/:id",
+      element: (
+        <ProtectedRoute>
+          <OrderSuccessPage></OrderSuccessPage>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/user-orders",
+      element: (
+        <ProtectedRoute>
+          <UserOrderPage></UserOrderPage>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/user-profile",
+      element: (
+        <ProtectedRoute>
+          <UserProfilePage></UserProfilePage>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/order-cancalled",
+      element: (
+        <ProtectedRoute>
+          <PaymentError></PaymentError>
+        </ProtectedRoute>
 
-    ),
-  },
-  {
-    path: "/logout",
-    element: (
-      <Logout></Logout>
-    ),
-  },
-  {
-    path: "/reset-password-request",
-    element: (
-      <ForgetPassword></ForgetPassword>
-    ),
-  },
-  {
-    path: "/reset-password",
-    element: (
-      <ResetPassword></ResetPassword>
-    ),
-  },
-  {
-    path: "/admin",
-    element: (
-      <ProtectedAdmin>
-        <AdminHomePage></AdminHomePage>
-      </ProtectedAdmin>
-    ),
-  },
-  {
-    path: "/admin/product-form/add",
-    element: (
-      <ProtectedAdmin>
-        <AdminProductFormPage></AdminProductFormPage>
-      </ProtectedAdmin>
-    ),
-  },
-  {
-    path: "/admin/product-form/edit/:id",
-    element: (
-      <ProtectedAdmin>
-        <AdminProductFormPage></AdminProductFormPage>
-      </ProtectedAdmin>
-    ),
-  },
-  {
-    path: "/admin/orders",
-    element: (
-      <ProtectedAdmin>
-        <AdminOrdersPage></AdminOrdersPage>
-      </ProtectedAdmin>
-    ),
-  },
+      ),
+    },
+    {
+      path: "/logout",
+      element: (
+        <Logout></Logout>
+      ),
+    },
+    {
+      path: "/reset-password-request",
+      element: (
+        <ForgetPassword></ForgetPassword>
+      ),
+    },
+    {
+      path: "/reset-password",
+      element: (
+        <ResetPassword></ResetPassword>
+      ),
+    },
+    {
+      path: "/admin",
+      element: (
+        <ProtectedAdmin>
+          <AdminHomePage></AdminHomePage>
+        </ProtectedAdmin>
+      ),
+    },
+    {
+      path: "/admin/product-form/add",
+      element: (
+        <ProtectedAdmin>
+          <AdminProductFormPage></AdminProductFormPage>
+        </ProtectedAdmin>
+      ),
+    },
+    {
+      path: "/admin/product-form/edit/:id",
+      element: (
+        <ProtectedAdmin>
+          <AdminProductFormPage></AdminProductFormPage>
+        </ProtectedAdmin>
+      ),
+    },
+    {
+      path: "/admin/orders",
+      element: (
+        <ProtectedAdmin>
+          <AdminOrdersPage></AdminOrdersPage>
+        </ProtectedAdmin>
+      ),
+    },
 
-  {
-    path: "*",
-    element: (
-      <NotFound404></NotFound404>
-    ),
-  },
-]);
+    {
+      path: "*",
+      element: (
+        <NotFound404></NotFound404>
+      ),
+    },
+  ]
+});
 
 
 
