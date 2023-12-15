@@ -33,10 +33,10 @@ import AdminOrdersPage from './features/pages/AdminOrdersPage';
 import PaymentError from './features/pages/PaymentErrorPage';
 import ResetPassword from './features/auth/components/ResetPassword';
 
-const router = createBrowserRouter(
+const router = createBrowserRouter({
 
-
-  [
+  basename: "/",
+  routes: [
     {
       path: "/",
       element: (
@@ -169,6 +169,7 @@ const router = createBrowserRouter(
       ),
     },
   ]
+}
 );
 
 
