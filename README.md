@@ -1,7 +1,7 @@
 
 
  # MERN_ECOMMERCE_WEBSITE_FRONTEND  
-### Demo :  🔗 [Click to See Live Demo of Website](https://mern-ecommerce-website-kq9d52a6w-meet-jadavs-projects.vercel.app/)  
+### Demo :  🔗 [Click to See Live Demo of Website](https://meetjadav.shop/)  
 <hr>
 ➡ Clone the Frontend code with following commands
 
